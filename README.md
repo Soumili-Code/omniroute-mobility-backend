@@ -11,6 +11,7 @@
 **OmniRoute** is an enterprise-grade, high-concurrency corporate transit, cab-pooling, and real-time mobility backend engine modeled after platforms like Routmatic, Rapido, and Uber. Built with **Java 21 Virtual Threads (Project Loom)**, **Spring Boot 3**, **Apache Kafka**, **Redis GEO**, **PostgreSQL (PostGIS & pgvector)**, and **Spring AI**.
 
 The platform solves complex distributed mobility problems: high-frequency telemetry ingestion, Uber H3 hexagonal spatial surge pricing, graph-based shuttle pooling algorithms, transactional outbox Kafka streaming, event-driven Saga billing, and autonomous GenAI safety guardians.
+Think of OmniRoute as the complete corporate transit and ride-hailing backend engine (similar to Routmatic, Rapido, or Uber). It handles corporate shift bookings, pairs employees into shared cabs, matches nearby drivers in real-time, tracks vehicles live on a map, and processes fare settlements automatically—backed by a smart AI safety assistant.
 
 ---
 
