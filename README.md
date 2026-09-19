@@ -15,6 +15,18 @@ Think of OmniRoute as the complete corporate transit and ride-hailing backend en
 
 ---
 
+## 📖 Core Platform Functionality
+
+* **🔐 User Auth & Access:** Secure login issuing stateless JWT passes with Employee, Driver, and Transport Admin permissions[cite: 1].
+* **🚌 Smart Corporate Cab-Pooling:** Groups employees living along overlapping routes into shared cabs using spatial graph clustering algorithms[cite: 1].
+* **⬢ Uber H3 Dynamic Surge Pricing:** Partitions city maps into hexagonal cells to calculate dynamic demand/supply surge multipliers ($1.2x - 2.0x$) per cell[cite: 1].
+* **📍 Sub-10ms Driver Search:** Finds nearby available drivers instantly using Redis GEO memory indexing[cite: 1].
+* **🛰️ Live GPS Map Streaming:** Pushes real-time driver coordinates to client app maps over STOMP WebSockets[cite: 1].
+* **🛡️ Telemetry Spoof Prevention:** Calculates driver speed between GPS pings to block fraudulent GPS location spoofing[cite: 1].
+* **🔄 Reliable Billing (Kafka Saga & Outbox):** Handles multi-step ride payouts via Kafka event sagas, auto-refunding corporate allowances if trips cancel[cite: 1].
+* **👁️ Multimodal AI Driver Onboarding:** Uses AI Vision models to automatically read and verify driver license photos[cite: 1].
+* **🤖 Autonomous AI Safety Guardian:** AI agent that monitors stationary vehicle pings during late-night trips and auto-triggers safety checks[cite: 1].
+
 ## 🛠️ System Architecture & Core Modules
 
 ```text
