@@ -1,0 +1,44 @@
+# Application Overview: OmniRoute Mobility Engine
+Think of OmniRoute as the complete corporate transit and ride-hailing backend engine
+(similar to Routmatic, Rapido, or Uber). It handles corporate shift bookings, pairs employees into shared cabs,
+matches nearby drivers in real-time, tracks vehicles live on a map, and processes fare settlements automatically—backed by a smart AI safety assistant.
+
+## 1. Executive Summary & Plain-English Overview
+**OmniRoute** (`omniroute-mobility-backend`) is an enterprise-grade, real-time corporate transit, cab-pooling, and ride-hailing backend engine modeled after platforms like Routmatic, Rapido, and Uber. The platform manages the end-to-end lifecycle of corporate transit: authenticating employees and drivers, scheduling shift bookings, grouping riders into shared shuttles using graph algorithms, matching nearby drivers in sub-10ms intervals, streaming live GPS movement to mobile maps, settling corporate transit allowances via distributed event pipelines, and ensuring safety through an autonomous AI guardian.
+
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        1. Employee & Driver Auth                        │
+│       (Registers employees/drivers, issues secure digital passes)       │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     2. Smart Shift Ride Booking                         │
+│  (Employees book shift cabs; system locks seats safely & clusters riders)│
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     3. Uber H3 Hexagonal Surge Pricing                  │
+│    (Calculates dynamic fares based on spatial demand in city hex cells) │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                   4. Real-Time Matching & GPS Map Tracking              │
+│    (Finds nearest driver in <10ms; streams live location to client map) │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                  5. Reliable Fare Settlement (Kafka Saga)               │
+│ (Settles fares; auto-refunds employee pass if trip cancels midway)      │
+└──────────────────────────────────┬──────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     6. Autonomous AI Safety Guardian                    │
+│   (Scans stationary vehicles; verifies driver documents via AI Vision)  │
+└─────────────────────────────────────────────────────────────────────────┘
+
